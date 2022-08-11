@@ -1,8 +1,9 @@
 from django.db import models
 # from django.contrib.auth.models import User
 
-from accounts.models import CustomUser as User
 from django.core.validators import RegexValidator
+
+from accounts.models import CustomUser as User
 
 # Create your models here.
 
@@ -84,10 +85,9 @@ class Deal(models.Model):
 
 
 
-
 class Contact(models.Model):
-    email = models.EmailField()
-    name = models.CharField(max_length=5)
     phone_regex = RegexValidator( regex = r'^\d{10}$',message = "phone number should exactly be in 10 digits")
-    phone = models.CharField(max_length=255, validators=[phone_regex])
+    email = models.EmailField(max_length=255)
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255,validators=[phone_regex])
     query = models.TextField()

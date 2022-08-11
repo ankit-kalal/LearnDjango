@@ -42,7 +42,5 @@ class SellerAdmin(admin.ModelAdmin):
 # admin.site.register(CustomUser)
 admin.site.register(CustomUser,CustomUserAdmin)
 
-
-
-
-# admin.site.register(CustomUser)
+admin.site.register(Seller, SellerAdmin)
+admin.site.register(Customer)
